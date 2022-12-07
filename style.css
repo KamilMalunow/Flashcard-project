@@ -1,0 +1,76 @@
+html {
+    padding: 0;
+    margin: 0;
+    background: #f5f5f5;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.add_question--button {
+    padding: 10px;
+    border: 1px solid #ff8552;
+    color: #ff8552;
+    background: transparent;
+    font-size: 1.1rem;
+    border-radius: 0.25rem;
+}
+
+.add_question--button:hover {
+    background-color: #ff8552;
+    color: #000;
+    transition: 0.3s;
+}
+
+.main {
+    width: 50%;
+    margin: 30px 0;
+    display: none;
+}
+
+.main_addquestion {
+    border: 1px solid #ff8552;
+    padding: 20px;
+    width: auto;
+}
+
+.question--textarea,
+.anwser--textarea {
+    width: 100%;
+    font-size: 1.1rem;
+}
+
+.submitButton {
+    width: 50%;
+    margin: 10px 0;
+    font-size: 1.2rem;
+    padding: 10px;
+    background-color: transparent;
+    border: 3px solid teal;
+    color: teal;
+}
+
+.submitButton:hover {
+    background-color: teal;
+    color: #f5f5f5;
+    transition: 0.3s;
+}
+
+.close-addquestion {
+    position: relative;
+    left: 200px;
+    bottom: 310px;
+    background-color: transparent;
+    border: 2px solid teal;
+    color: #000;
+    font-size: 1.2rem;
+}
+
+.close-addquestion:hover{
+    background-color: teal;
+    color: white;
+    transition: 0.3s;
+}
+
