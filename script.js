@@ -37,17 +37,17 @@ function displayQuestions() {
        
         result.innerHTML = text;
         const showHide = document.querySelectorAll('.toggle--item');
-        showHide.forEach((button) => { button.addEventListener("click", toggleButton) })
+        showHide.forEach((button, index) => { button.addEventListener("click", () => {
+            toggleButton(index);
+        } ) })
     }
 
 
 
 
-function toggleButton() {
+function toggleButton(buttonIndex) {
     const item = document.querySelectorAll('.item');
-    item.forEach((ite) => {
-        ite.classList.toggle("show")
-    })
+   item[buttonIndex].classList.toggle("show");
 }
 
 
