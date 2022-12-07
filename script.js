@@ -6,11 +6,8 @@ const anwserText = document.querySelector('.anwser--textarea');
 const questionText = document.querySelector('.question--textarea');
 const result = document.querySelector('.result');
 
-const tablica = [{
-    question: "Pytanie",
-    anwser: "Odpowiedz",
-}];
-let text;
+const tablica = [];
+
 
 function showAddQuestion() {
     main.style.display = "block";
@@ -22,12 +19,9 @@ function closeAddQuestion() {
 }
 
 function displayQuestions() {
-
-    if (anwserText.value === "" || questionText.value === "") {
-        alert("Cannot Add Empty Values");
-    } else {
+    let text = "";
         for (const a of tablica) {
-            text =
+            text +=
                 `
         <div class="card">
             <p>${a.question}</p>
@@ -40,24 +34,39 @@ function displayQuestions() {
         </div>
         `
         }
+       
         result.innerHTML = text;
-        const showHide = document.querySelector('.toggle--item');
-        showHide.addEventListener("click", toggleButton)
+        const showHide = document.querySelectorAll('.toggle--item');
+        showHide.forEach((button) => { button.addEventListener("click", toggleButton) })
     }
+
+
+
+
+function toggleButton() {
+    const item = document.querySelectorAll('.item');
+    item.forEach((ite) => {
+        ite.classList.toggle("show")
+    })
 }
 
 
 
-function toggleButton(){
-    const item = document.querySelector('.item');
-    item.classList.toggle("show")
+function pushCard() {
+    if (anwserText.value === "" || questionText.value === "") {
+        alert("Cannot Add Empty Values")
+    } else {
+        tablica.push({
+            question: questionText.value.trim(),
+            anwser: anwserText.value.trim(),
+        })
+        anwserText.value = "";
+        questionText.value = ""; 
+    }
+    displayQuestions();
 }
 
 
-
-
-
-
-saveQuestionBtn.addEventListener("click", displayQuestions);
+saveQuestionBtn.addEventListener("click", pushCard);
 closeAddQuestionBtn.addEventListener("click", closeAddQuestion);
 showQuestionBtn.addEventListener("click", showAddQuestion);

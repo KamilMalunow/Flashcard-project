@@ -8,7 +8,9 @@ html {
     max-width: 1000px;
     margin: auto;
 }
-
+.header{
+    margin-bottom: 20px;
+}
 .add_question--button {
     padding: 10px;
     border: 1px solid #ff8552;
@@ -37,6 +39,7 @@ html {
     width: auto;
 }
 
+
 .question--textarea,
 .anwser--textarea {
     width: 100%;
@@ -60,10 +63,14 @@ html {
     transition: 0.3s;
 }
 
+.box{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+    height: 40px;
+}
 .close-addquestion {
-    position: relative;
-    left: 200px;
-    bottom: 310px;
     background-color: transparent;
     border: 2px solid teal;
     color: #000;
@@ -80,7 +87,7 @@ html {
 .card{
     border: 1px solid gray;
     background-color: #fff;
-    width: 350px;
+    width: 300px;
     padding: 15px;
     border-radius: 0.25rem;
 }
@@ -142,4 +149,17 @@ html {
     font-size: 1.1rem;
     cursor: pointer;
     color: blue;
+}
+
+.result{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+@media only screen and (max-width: 600px){
+    .main_addquestion, .container, .main{
+        width: 94%;
+    }
+    
 }
